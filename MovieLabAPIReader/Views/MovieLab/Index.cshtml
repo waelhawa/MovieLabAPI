@@ -1,0 +1,19 @@
+﻿@model List<Movie>
+<table class="table table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+    </tr>
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.title</td>
+            <td>@movie.genre</td>
+            <td><a href="../MovieLab/EditMovie?id=@movie.id" class="btn btn-warning">Edit @movie.title</a></td>
+            <td><a href="../MovieLab/DeleteMovie?id=@movie.id" class="btn btn-danger">Delete @movie.title</a></td>
+        </tr>
+    }
+
+</table>
+    <a href="MovieLab/MovieForm" class="btn btn-dark">Add a new Movie</a>
+
